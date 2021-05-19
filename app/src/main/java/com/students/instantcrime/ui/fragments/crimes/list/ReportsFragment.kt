@@ -1,22 +1,23 @@
-package com.students.instantcrime.ui.fragments
+package com.students.instantcrime.ui.fragments.crimes.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.students.instantcrime.R
-import com.students.instantcrime.databinding.FragmentDefaultBinding
+import com.students.instantcrime.databinding.FragmentReportsBinding
 import com.students.instantcrime.ui.fragments.crimes.ReportsAdapter
 
-class DefaultFragment : Fragment() {
+private const val TAG = "AllReportsFragment"
 
-    private lateinit var binding: FragmentDefaultBinding
-    private lateinit var viewModel: DefaultViewModel
+class AllReportsFragment : Fragment() {
+
+    private lateinit var binding: FragmentReportsBinding
+    private lateinit var viewModel: ReportsViewModel
 
     private val reportsAdapter by lazy { ReportsAdapter() }
 
@@ -24,33 +25,33 @@ class DefaultFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        binding = FragmentDefaultBinding.inflate(inflater, container, false)
+        binding = FragmentReportsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        viewModel = ViewModelProvider(this).get(ReportsViewModel::class.java)
+
+        viewModel.reports.observe(viewLifecycleOwner, Observer { reports ->
+            reportsAdapter.reportList = reports
+        })
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-        binding.addReportFab.setOnClickListener { findNavController().navigate(R.id.action_add_crime) }
-
-        //Setup the recycler view
+        super.onViewCreated(view, savedInstanceState)
 
         binding.reportsContainer.layoutManager = LinearLayoutManager(requireContext())
         binding.reportsContainer.setHasFixedSize(true)
-
+        binding.reportsContainer.adapter = reportsAdapter
         binding.reportsContainer.addItemDecoration(
             DividerItemDecoration(
                 requireContext(),
                 DividerItemDecoration.VERTICAL
             )
         )
-        binding.reportsContainer.adapter = reportsAdapter
-
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
 
-        viewModel = ViewModelProvider(this).get(DefaultViewModel::class.java)
-    }
 }

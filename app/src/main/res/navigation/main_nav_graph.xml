@@ -19,4 +19,9 @@
         android:name="com.students.instantcrime.ui.fragments.crimes.AddCrimeFragment"
         android:label="@string/add_crime_text"
         tools:layout="@layout/fragment_add_crime" />
+    <fragment
+        android:id="@+id/allReportsFragment"
+        android:name="com.students.instantcrime.ui.fragments.crimes.list.AllReportsFragment"
+        android:label="@string/reports_test"
+        tools:layout="@layout/fragment_reports" />
 </navigation>

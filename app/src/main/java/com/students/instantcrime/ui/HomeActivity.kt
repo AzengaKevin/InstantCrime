@@ -11,6 +11,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
@@ -50,32 +51,8 @@ class HomeActivity : AppCompatActivity() {
 
             menu?.removeItem(R.id.login_menu_item)
 
-            if (this::user.isInitialized) {
-
-                when (Role.fromString(user.role!!)) {
-                    Role.Admin -> {
-                        menu?.removeItem(R.id.officer_dashboard_menu_item)
-                    }
-
-                    Role.Officer -> {
-                        menu?.removeItem(R.id.admin_dashboard_menu_item)
-                    }
-
-                    else -> {
-                        menu?.removeItem(R.id.admin_dashboard_menu_item)
-                        menu?.removeItem(R.id.officer_dashboard_menu_item)
-                    }
-                }
-
-            } else {
-                menu?.removeItem(R.id.admin_dashboard_menu_item)
-                menu?.removeItem(R.id.officer_dashboard_menu_item)
-            }
-
         } else {
             menu?.removeItem(R.id.logout_menu_item)
-            menu?.removeItem(R.id.admin_dashboard_menu_item)
-            menu?.removeItem(R.id.officer_dashboard_menu_item)
             menu?.removeItem(R.id.my_reports_menu_item)
         }
 
@@ -105,17 +82,7 @@ class HomeActivity : AppCompatActivity() {
                 true
             }
 
-            R.id.officer_dashboard_menu_item -> {
-
-                true
-            }
-
-            R.id.admin_dashboard_menu_item -> {
-
-                true
-            }
-
-            else -> super.onOptionsItemSelected(item)
+            else -> item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
         }
 
     }

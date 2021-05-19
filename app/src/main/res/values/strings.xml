@@ -33,4 +33,6 @@
     <string name="logout_text">Logout</string>
     <string name="dashboard_text">Dashboard</string>
     <string name="my_reports_menu_item">My Reports</string>
+    <string name="reports_test">Reports</string>
+    <string name="add_button_text">Add Button</string>
 </resources>

@@ -7,11 +7,8 @@
         android:id="@+id/my_reports_menu_item"
         android:title="@string/my_reports_menu_item" />
     <item
-        android:id="@+id/admin_dashboard_menu_item"
-        android:title="@string/dashboard_text" />
-    <item
-        android:id="@+id/officer_dashboard_menu_item"
-        android:title="@string/dashboard_text" />
+        android:id="@+id/allReportsFragment"
+        android:title="@string/reports_test" />
     <item
         android:id="@+id/logout_menu_item"
         android:title="@string/logout_text" />
