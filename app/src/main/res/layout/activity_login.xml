@@ -99,12 +99,13 @@
         </androidx.cardview.widget.CardView>
 
         <ProgressBar
-            android:id="@+id/register_progress_bar"
+            android:id="@+id/login_progress_bar"
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/std_screen_padding"
             android:indeterminateTint="?colorPrimary"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@id/auth_card_view"
             app:layout_constraintEnd_toEndOf="@id/auth_card_view"
             app:layout_constraintStart_toStartOf="@id/auth_card_view" />

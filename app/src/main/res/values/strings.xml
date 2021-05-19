@@ -18,7 +18,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="report_crime_motivation_text">Keeping quiet about a crime, makes you an accomplice, help the authorities keep the streets clean</string>
-    <string name="keep_track_text">Keep track about a report</string>
+    <string name="keep_track_text">Keep track of a report</string>
 
     <string name="report_now_text">Report Now</string>
     <string name="title_text">Title</string>
@@ -32,4 +32,5 @@
     <string name="add_crime_text">Add Crime</string>
     <string name="logout_text">Logout</string>
     <string name="dashboard_text">Dashboard</string>
+    <string name="my_reports_menu_item">My Reports</string>
 </resources>
