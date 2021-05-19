@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/defaultFragment">
+
+    <fragment
+        android:id="@+id/defaultFragment"
+        android:name="com.students.instantcrime.ui.fragments.DefaultFragment"
+        android:label="@string/home_text"
+        tools:layout="@layout/fragment_default">
+        <action
+            android:id="@+id/action_add_crime"
+            app:destination="@id/addCrimeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCrimeFragment"
+        android:name="com.students.instantcrime.ui.fragments.crimes.AddCrimeFragment"
+        android:label="@string/add_crime_text"
+        tools:layout="@layout/fragment_add_crime" />
+</navigation>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="std_spacing">16dp</dimen>
+    <dimen name="std_screen_padding">16dp</dimen>
+    <dimen name="sm_inset">8dp</dimen>
+    <dimen name="btn_spacing">24dp</dimen>
+</resources>

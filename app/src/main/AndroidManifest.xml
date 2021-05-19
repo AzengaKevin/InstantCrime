@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.students.instantcrime">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -8,8 +15,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.InstantCrime">
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.InstantCrime"
+        tools:ignore="AllowBackup">
+        <activity android:name=".ui.HomeActivity"></activity>
+        <activity
+            android:name=".ui.auth.RegisterActivity"
+            android:theme="@style/Theme.InstantCrime.NotActionBar" />
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:theme="@style/Theme.InstantCrime.NotActionBar" />
+        <activity
+            android:name=".ui.SplashActivity"
+            android:theme="@style/Theme.InstantCrime.NotActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

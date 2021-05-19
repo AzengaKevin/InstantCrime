@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">InstantCrime</string>
+    <string name="app_title">Instant Crime Reporting</string>
+
+    <string name="sign_up_text">Sign Up</string>
+    <string name="sinn_in_text">Sign In</string>
+
+    <string name="email_text">Email</string>
+    <string name="name_text">Name</string>
+    <string name="password_text">Password</string>
+
+    <string name="register_text">Register</string>
+    <string name="login_text">Login</string>
+
+    <string name="login_prompt_text">Already Have An Account?</string>
+    <string name="register_prompt_text">Don\'t Have An Account Yet?</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="report_crime_motivation_text">Keeping quiet about a crime, makes you an accomplice, help the authorities keep the streets clean</string>
+    <string name="keep_track_text">Keep track about a report</string>
+
+    <string name="report_now_text">Report Now</string>
+    <string name="title_text">Title</string>
+    <string name="description_text">Description</string>
+    <string name="location_text">Location</string>
+    <string name="select_image_text">Select Image</string>
+    <string name="submit_crime_text">Submit Crime</string>
+    <string name="crime_file_text">Crime File</string>
+
+    <string name="home_text">Home</string>
+    <string name="add_crime_text">Add Crime</string>
+    <string name="logout_text">Logout</string>
+    <string name="dashboard_text">Dashboard</string>
 </resources>
