@@ -9,6 +9,10 @@
     <item
         android:id="@+id/allReportsFragment"
         android:title="@string/reports_text" />
+
+    <item
+        android:id="@+id/userListFragment"
+        android:title="@string/users_text" />
     <item
         android:id="@+id/logout_menu_item"
         android:title="@string/logout_text" />

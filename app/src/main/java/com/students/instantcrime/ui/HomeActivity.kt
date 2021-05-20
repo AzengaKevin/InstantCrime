@@ -39,7 +39,8 @@ class HomeActivity : AppCompatActivity() {
             setOf(
                 R.id.defaultFragment,
                 R.id.myReportsFragment,
-                R.id.allReportsFragment
+                R.id.allReportsFragment,
+                R.id.userListFragment
             )
         )
 

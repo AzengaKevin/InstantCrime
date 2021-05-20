@@ -1,13 +1,9 @@
 package com.students.instantcrime.data.repositories
 
-import android.util.Log
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.students.instantcrime.data.Constants
 import com.students.instantcrime.data.models.Report
-import java.lang.Exception
-
-const val TAG = "ReportRepository"
 
 class ReportRepository(private val listener: ReportTaskListener?) {
 
@@ -16,7 +12,8 @@ class ReportRepository(private val listener: ReportTaskListener?) {
             .addSnapshotListener { value, error ->
 
                 if (error != null) {
-                    Log.e(TAG, "findAll: ", error)
+
+                    listener?.onError(error)
 
                     return@addSnapshotListener
                 }
@@ -34,7 +31,8 @@ class ReportRepository(private val listener: ReportTaskListener?) {
             .addSnapshotListener { value, error ->
 
                 if (error != null) {
-                    Log.e(TAG, "findAll: ", error)
+
+                    listener?.onError(error)
 
                     return@addSnapshotListener
                 }
@@ -53,7 +51,8 @@ class ReportRepository(private val listener: ReportTaskListener?) {
             .addSnapshotListener { value, error ->
 
                 if (error != null) {
-                    Log.e(TAG, "findById: ", error)
+
+                    listener?.onError(error)
 
                     return@addSnapshotListener
                 }

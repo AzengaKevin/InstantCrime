@@ -37,4 +37,9 @@
             android:id="@+id/action_add_report_from_my_reports"
             app:destination="@id/addCrimeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="com.students.instantcrime.ui.fragments.users.UserListFragment"
+        android:label="@string/users_text"
+        tools:layout="@layout/user_list_fragment" />
 </navigation>

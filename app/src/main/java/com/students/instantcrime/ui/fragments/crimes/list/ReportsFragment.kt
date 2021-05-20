@@ -1,6 +1,7 @@
 package com.students.instantcrime.ui.fragments.crimes.list
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.students.instantcrime.databinding.FragmentReportsBinding
+import com.students.instantcrime.helpers.toast
 import com.students.instantcrime.ui.fragments.crimes.ReportsAdapter
 
 private const val TAG = "AllReportsFragment"
@@ -36,6 +38,11 @@ class AllReportsFragment : Fragment() {
 
         viewModel.reports.observe(viewLifecycleOwner, Observer { reports ->
             reportsAdapter.reportList = reports
+        })
+
+        viewModel.exception.observe(viewLifecycleOwner, Observer {
+            Log.e(TAG, "onActivityCreated: ", it)
+            requireContext().toast("An error occurred, when fetching reports, check logs")
         })
     }
 

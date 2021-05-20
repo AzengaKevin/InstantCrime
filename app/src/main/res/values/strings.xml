@@ -35,4 +35,7 @@
     <string name="my_reports_menu_item">My Reports</string>
     <string name="reports_text">All Reports</string>
     <string name="add_button_text">Add Button</string>
+    <string name="role_text">Role</string>
+    <string name="todays_date">20/05/2021</string>
+    <string name="users_text">Users</string>
 </resources>
