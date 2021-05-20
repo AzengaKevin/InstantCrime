@@ -3,10 +3,11 @@ package com.students.instantcrime.data.enums
 import java.lang.IllegalArgumentException
 
 enum class ReportStatus(private val slug: String) {
+
     Default("default"), Confirmed("confirmed"), Closed("closed");
 
     override fun toString(): String {
-        return "slug";
+        return slug;
     }
 
     companion object {

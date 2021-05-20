@@ -41,4 +41,9 @@
     <string name="admin_text">Admin</string>
     <string name="officer_text">Officer</string>
     <string name="default_text">Default</string>
+    <string name="confirmed_text">Confirmed</string>
+    <string name="closed_text">Closed</string>
+    <string name="status_text">Status</string>
+    <string name="report_image_text">Report Image</string>
+    <string name="report_detail_text">Report Detail</string>
 </resources>

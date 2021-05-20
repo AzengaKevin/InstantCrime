@@ -20,6 +20,7 @@ import com.students.instantcrime.R
 import com.students.instantcrime.data.Constants
 import com.students.instantcrime.data.enums.Role
 import com.students.instantcrime.data.models.User
+import com.students.instantcrime.helpers.toast
 import com.students.instantcrime.ui.auth.LoginActivity
 
 private const val TAG = "HomtActivity"
@@ -58,9 +59,48 @@ class HomeActivity : AppCompatActivity() {
 
             menu?.removeItem(R.id.login_menu_item)
 
+            if (this::user.isInitialized) {
+
+                try {
+
+                    when (Role.fromString(user.role!!)) {
+                        Role.Admin -> {
+                            menu?.removeItem(R.id.allReportsFragment)
+                            menu?.removeItem(R.id.myReportsFragment)
+                        }
+
+                        Role.Officer -> {
+
+                            menu?.removeItem(R.id.userListFragment)
+                            menu?.removeItem(R.id.myReportsFragment)
+
+                        }
+
+                        else -> {
+
+                            menu?.removeItem(R.id.allReportsFragment)
+                            menu?.removeItem(R.id.userListFragment)
+
+                        }
+                    }
+
+                } catch (exception: Exception) {
+
+                    Log.e(TAG, "onPrepareOptionsMenu: failed", exception)
+                    toast("User role could not be established")
+
+                    menu?.removeItem(R.id.allReportsFragment)
+                    menu?.removeItem(R.id.userListFragment)
+                }
+            } else {
+                menu?.removeItem(R.id.userListFragment)
+            }
+
         } else {
             menu?.removeItem(R.id.logout_menu_item)
             menu?.removeItem(R.id.myReportsFragment)
+            menu?.removeItem(R.id.allReportsFragment)
+            menu?.removeItem(R.id.userListFragment)
         }
 
         return true

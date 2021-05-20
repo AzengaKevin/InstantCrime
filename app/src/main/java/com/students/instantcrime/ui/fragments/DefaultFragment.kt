@@ -12,18 +12,19 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.students.instantcrime.R
+import com.students.instantcrime.data.models.Report
 import com.students.instantcrime.databinding.FragmentDefaultBinding
 import com.students.instantcrime.helpers.toast
-import com.students.instantcrime.ui.fragments.crimes.ReportsAdapter
+import com.students.instantcrime.ui.fragments.reports.ReportsAdapter
 
 private const val TAG = "DefaultFragment"
 
-class DefaultFragment : Fragment() {
+class DefaultFragment : Fragment(), ReportsAdapter.ReportItemListener {
 
     private lateinit var binding: FragmentDefaultBinding
     private lateinit var viewModel: DefaultViewModel
 
-    private val reportsAdapter by lazy { ReportsAdapter() }
+    private val reportsAdapter by lazy { ReportsAdapter(this) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,5 +67,13 @@ class DefaultFragment : Fragment() {
             Log.e(TAG, "onActivityCreated: failed to get reports", exception)
             requireContext().toast("An error occurred while fetching reports, chek the logs")
         })
+    }
+
+    override fun onClick(view: View, report: Report) {
+
+        val action = DefaultFragmentDirections.actionViewReportDetail(report)
+
+        findNavController().navigate(action)
+
     }
 }

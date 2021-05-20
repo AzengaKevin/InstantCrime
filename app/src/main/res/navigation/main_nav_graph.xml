@@ -13,15 +13,18 @@
         <action
             android:id="@+id/action_add_report"
             app:destination="@id/addCrimeFragment" />
+        <action
+            android:id="@+id/action_view_report_detail"
+            app:destination="@id/reportDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/addCrimeFragment"
-        android:name="com.students.instantcrime.ui.fragments.crimes.AddReporFragment"
+        android:name="com.students.instantcrime.ui.fragments.reports.AddReporFragment"
         android:label="@string/add_report_text"
         tools:layout="@layout/fragment_add_crime" />
     <fragment
         android:id="@+id/allReportsFragment"
-        android:name="com.students.instantcrime.ui.fragments.crimes.list.AllReportsFragment"
+        android:name="com.students.instantcrime.ui.fragments.reports.list.AllReportsFragment"
         android:label="@string/reports_text"
         tools:layout="@layout/fragment_reports">
         <action
@@ -30,16 +33,28 @@
     </fragment>
     <fragment
         android:id="@+id/myReportsFragment"
-        android:name="com.students.instantcrime.ui.fragments.crimes.list.MyReportsFragment"
+        android:name="com.students.instantcrime.ui.fragments.reports.list.MyReportsFragment"
         android:label="@string/my_reports_menu_item"
         tools:layout="@layout/my_reports_fragment">
         <action
             android:id="@+id/action_add_report_from_my_reports"
             app:destination="@id/addCrimeFragment" />
+        <action
+            android:id="@+id/action_view_report_detail_mine"
+            app:destination="@id/reportDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/userListFragment"
         android:name="com.students.instantcrime.ui.fragments.users.UserListFragment"
         android:label="@string/users_text"
         tools:layout="@layout/user_list_fragment" />
+    <fragment
+        android:id="@+id/reportDetailFragment"
+        android:name="com.students.instantcrime.ui.fragments.reports.ReportDetailFragment"
+        android:label="@string/report_detail_text"
+        tools:layout="@layout/fragment_report_detail">
+        <argument
+            android:name="report"
+            app:argType="com.students.instantcrime.data.models.Report" />
+    </fragment>
 </navigation>

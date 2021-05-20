@@ -1,4 +1,4 @@
-package com.students.instantcrime.ui.fragments.crimes.list
+package com.students.instantcrime.ui.fragments.reports.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

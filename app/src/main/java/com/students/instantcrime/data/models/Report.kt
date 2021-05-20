@@ -2,6 +2,7 @@ package com.students.instantcrime.data.models
 
 import com.google.firebase.firestore.DocumentId
 import com.google.firebase.firestore.ServerTimestamp
+import java.io.Serializable
 import java.util.*
 
 data class Report(
@@ -15,4 +16,4 @@ data class Report(
     var status: String? = null,
     @ServerTimestamp
     private var createAt: Date? = null
-)
+) : Serializable

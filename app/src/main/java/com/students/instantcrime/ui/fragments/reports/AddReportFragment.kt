@@ -1,4 +1,4 @@
-package com.students.instantcrime.ui.fragments.crimes
+package com.students.instantcrime.ui.fragments.reports
 
 import android.app.Activity
 import android.content.ContentResolver

@@ -1,4 +1,4 @@
-package com.students.instantcrime.ui.fragments.crimes.list
+package com.students.instantcrime.ui.fragments.reports.list
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -14,19 +14,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.students.instantcrime.R
+import com.students.instantcrime.data.models.Report
 import com.students.instantcrime.databinding.MyReportsFragmentBinding
 import com.students.instantcrime.helpers.toast
-import com.students.instantcrime.ui.fragments.crimes.ReportsAdapter
+import com.students.instantcrime.ui.fragments.reports.ReportsAdapter
 
 private const val TAG = "MyReportsFragment"
 
-class MyReportsFragment : Fragment() {
+class MyReportsFragment : Fragment(), ReportsAdapter.ReportItemListener {
 
 
     private lateinit var viewModel: MyReportsViewModel
     private lateinit var binding: MyReportsFragmentBinding
 
-    private val reportsAdapter by lazy { ReportsAdapter() }
+    private val reportsAdapter by lazy { ReportsAdapter(this) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -72,6 +73,14 @@ class MyReportsFragment : Fragment() {
         )
 
         binding.reportsContainer.adapter = reportsAdapter
+    }
+
+    override fun onClick(view: View, report: Report) {
+
+        val action = MyReportsFragmentDirections.actionViewReportDetailMine(report)
+
+        findNavController().navigate(action)
+
     }
 
 }
