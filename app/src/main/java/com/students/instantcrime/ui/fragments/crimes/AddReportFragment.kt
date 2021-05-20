@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
@@ -25,7 +26,7 @@ import java.util.*
 private const val SELECT_IMAGE_RC = 22
 private const val TAG = "AddCrimeFragment"
 
-class AddCrimeFragment : Fragment() {
+class AddReporFragment : Fragment() {
 
     private lateinit var reportImageUri: Uri
     private lateinit var binding: FragmentAddCrimeBinding
@@ -81,6 +82,10 @@ class AddCrimeFragment : Fragment() {
             status = status,
             createAt = Date()
         )
+
+        if (Firebase.auth.currentUser != null) {
+            report.userId = Firebase.auth.currentUser!!.uid
+        }
 
         if (this::reportImageUri.isInitialized) {
 

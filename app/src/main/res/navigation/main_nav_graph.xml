@@ -11,17 +11,30 @@
         android:label="@string/home_text"
         tools:layout="@layout/fragment_default">
         <action
-            android:id="@+id/action_add_crime"
+            android:id="@+id/action_add_report"
             app:destination="@id/addCrimeFragment" />
     </fragment>
     <fragment
         android:id="@+id/addCrimeFragment"
-        android:name="com.students.instantcrime.ui.fragments.crimes.AddCrimeFragment"
-        android:label="@string/add_crime_text"
+        android:name="com.students.instantcrime.ui.fragments.crimes.AddReporFragment"
+        android:label="@string/add_report_text"
         tools:layout="@layout/fragment_add_crime" />
     <fragment
         android:id="@+id/allReportsFragment"
         android:name="com.students.instantcrime.ui.fragments.crimes.list.AllReportsFragment"
-        android:label="@string/reports_test"
-        tools:layout="@layout/fragment_reports" />
+        android:label="@string/reports_text"
+        tools:layout="@layout/fragment_reports">
+        <action
+            android:id="@+id/action_add_reports_from_all"
+            app:destination="@id/addCrimeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myReportsFragment"
+        android:name="com.students.instantcrime.ui.fragments.crimes.list.MyReportsFragment"
+        android:label="@string/my_reports_menu_item"
+        tools:layout="@layout/my_reports_fragment">
+        <action
+            android:id="@+id/action_add_report_from_my_reports"
+            app:destination="@id/addCrimeFragment" />
+    </fragment>
 </navigation>

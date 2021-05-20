@@ -11,16 +11,4 @@
         android:layout_height="match_parent"
         tools:listitem="@layout/report_view" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_report_fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_marginEnd="@dimen/sm_inset"
-        android:layout_marginBottom="@dimen/sm_inset"
-        android:clickable="true"
-        android:contentDescription="@string/add_button_text"
-        android:focusable="true"
-        android:src="@drawable/ic_baseline_add_24" />
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

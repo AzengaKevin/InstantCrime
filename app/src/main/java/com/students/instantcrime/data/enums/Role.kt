@@ -9,7 +9,6 @@ enum class Role(private val slug: String) {
 
     companion object {
         fun fromString(slug: String): Role {
-
             return when (slug) {
                 "admin" -> Admin
                 "officer" -> Officer

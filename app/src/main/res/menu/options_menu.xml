@@ -4,11 +4,11 @@
         android:id="@+id/login_menu_item"
         android:title="@string/login_text" />
     <item
-        android:id="@+id/my_reports_menu_item"
+        android:id="@+id/myReportsFragment"
         android:title="@string/my_reports_menu_item" />
     <item
         android:id="@+id/allReportsFragment"
-        android:title="@string/reports_test" />
+        android:title="@string/reports_text" />
     <item
         android:id="@+id/logout_menu_item"
         android:title="@string/logout_text" />

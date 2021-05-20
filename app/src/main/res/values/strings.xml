@@ -26,13 +26,13 @@
     <string name="location_text">Location</string>
     <string name="select_image_text">Select Image</string>
     <string name="submit_crime_text">Submit Crime</string>
-    <string name="crime_file_text">Crime File</string>
+    <string name="report_file_text">Report File</string>
 
     <string name="home_text">Home</string>
-    <string name="add_crime_text">Add Crime</string>
+    <string name="add_report_text">Add Report</string>
     <string name="logout_text">Logout</string>
     <string name="dashboard_text">Dashboard</string>
     <string name="my_reports_menu_item">My Reports</string>
-    <string name="reports_test">Reports</string>
+    <string name="reports_text">All Reports</string>
     <string name="add_button_text">Add Button</string>
 </resources>

@@ -35,7 +35,13 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         navController = findNavController(R.id.fragment)
-        appBarConfiguration = AppBarConfiguration(setOf(R.id.defaultFragment))
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.defaultFragment,
+                R.id.myReportsFragment,
+                R.id.allReportsFragment
+            )
+        )
 
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
@@ -53,7 +59,7 @@ class HomeActivity : AppCompatActivity() {
 
         } else {
             menu?.removeItem(R.id.logout_menu_item)
-            menu?.removeItem(R.id.my_reports_menu_item)
+            menu?.removeItem(R.id.myReportsFragment)
         }
 
         return true
