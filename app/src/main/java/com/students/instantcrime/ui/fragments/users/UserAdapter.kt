@@ -1,6 +1,7 @@
 package com.students.instantcrime.ui.fragments.users
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.students.instantcrime.data.models.User
@@ -8,7 +9,8 @@ import com.students.instantcrime.databinding.UserViewBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
-class UserAdapter : RecyclerView.Adapter<UserAdapter.UserHolder>() {
+class UserAdapter(private val listener: UserItemListener?) :
+    RecyclerView.Adapter<UserAdapter.UserHolder>() {
 
     private val dateFormatter by lazy { SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH) }
 
@@ -37,5 +39,13 @@ class UserAdapter : RecyclerView.Adapter<UserAdapter.UserHolder>() {
         holder.binding.roleTextView.text = users!![position].role
         holder.binding.joinDateTextView.text =
             if (users!![position].joinDate != null) dateFormatter.format(users!![position].joinDate!!) else "Not Set"
+
+        holder.binding.root.setOnClickListener {
+            listener?.onClickListener(it, users!![position])
+        }
+    }
+
+    interface UserItemListener {
+        fun onClickListener(view: View, user: User)
     }
 }

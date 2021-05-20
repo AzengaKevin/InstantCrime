@@ -38,4 +38,7 @@
     <string name="role_text">Role</string>
     <string name="todays_date">20/05/2021</string>
     <string name="users_text">Users</string>
+    <string name="admin_text">Admin</string>
+    <string name="officer_text">Officer</string>
+    <string name="default_text">Default</string>
 </resources>
